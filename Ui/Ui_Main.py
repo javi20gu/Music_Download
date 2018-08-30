@@ -11,8 +11,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Ventana_1(object):
     def setupUi(self, Ventana_1):
         Ventana_1.setObjectName("Ventana_1")
-        Ventana_1.resize(790, 111)
-        Ventana_1.setMinimumSize(QtCore.QSize(790, 111))
+        Ventana_1.resize(772, 111)
+        Ventana_1.setMinimumSize(QtCore.QSize(772, 111))
         Ventana_1.setMaximumSize(QtCore.QSize(790, 111))
         Ventana_1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "")
@@ -46,7 +46,7 @@ class Ui_Ventana_1(object):
         self.botonMp4.setFont(font)
         self.botonMp4.setObjectName("botonMp4")
         self.proceso = QtWidgets.QProgressBar(Ventana_1)
-        self.proceso.setGeometry(QtCore.QRect(160, 80, 591, 23))
+        self.proceso.setGeometry(QtCore.QRect(230, 80, 521, 21))
         self.proceso.setStyleSheet("border-radius: 4px;\n"
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(21, 126, 255);\n"
@@ -55,6 +55,12 @@ class Ui_Ventana_1(object):
         self.proceso.setProperty("value", 0)
         self.proceso.setTextVisible(False)
         self.proceso.setObjectName("proceso")
+        self.botonMp4a = QtWidgets.QRadioButton(Ventana_1)
+        self.botonMp4a.setGeometry(QtCore.QRect(160, 80, 61, 20))
+        font = QtGui.QFont()
+        font.setFamily("Nirmala UI")
+        self.botonMp4a.setFont(font)
+        self.botonMp4a.setObjectName("botonMp4a")
 
         self.retranslateUi(Ventana_1)
         QtCore.QMetaObject.connectSlotsByName(Ventana_1)
@@ -65,4 +71,5 @@ class Ui_Ventana_1(object):
         self.input.setPlaceholderText(_translate("Ventana_1", "Introduce el Url o Arrastralo"))
         self.botonMp3.setText(_translate("Ventana_1", "MP3"))
         self.botonMp4.setText(_translate("Ventana_1", "MP4"))
+        self.botonMp4a.setText(_translate("Ventana_1", "MP4A"))
 
