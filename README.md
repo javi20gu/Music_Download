@@ -1,4 +1,9 @@
 # Music_Download
-Aplicación de Escritorio Multiplataforma, descarga vídeos de youtube en mp3 y mp4.
-#### Versión: v0.1
-## Aplicación en Desarrollo, aun no disponible mp3.
+
+Aplicación de Escritorio Multiplataforma, descarga vídeos de youtube en mp3, mp4 e mp4a.
+
+#
+![Imagen Programa](ejemploPrograma.PNG)
+#
+#### Versión: v0.8
+---
