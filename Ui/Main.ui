@@ -66,7 +66,7 @@
     <rect>
      <x>30</x>
      <y>80</y>
-     <width>51</width>
+     <width>131</width>
      <height>20</height>
     </rect>
    </property>
@@ -76,7 +76,7 @@
     </font>
    </property>
    <property name="text">
-    <string>MP3</string>
+    <string>MP3 (solo Windows)</string>
    </property>
    <property name="checked">
     <bool>true</bool>
@@ -85,7 +85,7 @@
   <widget class="QRadioButton" name="botonMp4">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>170</x>
      <y>80</y>
      <width>61</width>
      <height>20</height>
@@ -103,9 +103,9 @@
   <widget class="QProgressBar" name="proceso">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>310</x>
      <y>80</y>
-     <width>521</width>
+     <width>441</width>
      <height>21</height>
     </rect>
    </property>
@@ -128,7 +128,7 @@ border: 1px solid rgb(225, 225, 225);</string>
   <widget class="QRadioButton" name="botonMp4a">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>240</x>
      <y>80</y>
      <width>61</width>
      <height>20</height>
