@@ -1,7 +1,11 @@
+
+
 from youtube_dl import YoutubeDL
 import youtube_dl
-from os import path, startfile
+from os import path, startfile, name
 from sys import platform
+from subprocess import call
+
 
 from Ui.Ui_Main import QtCore, QtWidgets, QtGui, Ui_Ventana_1
  
@@ -15,7 +19,7 @@ class App(QtWidgets.QWidget):
         self.ui = Ui_Ventana_1()
         self.ui.setupUi(self)
         self.setWindowFlag(QtCore.Qt.WindowStaysOnBottomHint)
-        if platform == "win32" or platform == "win64":
+        if name == 'nt':
             self.ui.botonMp3.setDisabled(False)
 
         else:
@@ -36,6 +40,7 @@ class App(QtWidgets.QWidget):
     def proceso(self):
         self.thread_error = False
         self.ruta = QtWidgets.QFileDialog.getExistingDirectory(self, 'Guardar Archivo')
+
         if self.ruta != "":
             self.abrir()
         
@@ -48,14 +53,21 @@ class App(QtWidgets.QWidget):
  
     def error(self):
 
-    
         if self.thread_error:
             indice = self.error_hilo.find(".")
             QtWidgets.QMessageBox.critical(self, 'MusicDownload', self.error_hilo[:indice])
+
         else:
             comprobar = QtWidgets.QMessageBox.information(self, 'MusicDownload', "¿Deseas escuchar la canción?", QtWidgets.QMessageBox.Yes, QtWidgets.QMessageBox.No)
+
             if comprobar == QtWidgets.QMessageBox.Yes:
-                startfile(self.filename_path)
+
+                if platform.startswith('darwin'):
+                    call(('open', self.filename_path))
+                elif name == 'nt':
+                    startfile(self.filename_path)
+                elif name == 'posix':
+                    call(('xdg-open', self.filename_path))
 
 
 class SecondThread(QtCore.QThread):
