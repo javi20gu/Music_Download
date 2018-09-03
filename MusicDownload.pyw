@@ -2,7 +2,7 @@
 
 from youtube_dl import YoutubeDL
 import youtube_dl
-from os import path, startfile, name
+from os import path, name
 from sys import platform
 from subprocess import call
 
@@ -65,6 +65,7 @@ class App(QtWidgets.QWidget):
                 if platform.startswith('darwin'):
                     call(('open', self.filename_path))
                 elif name == 'nt':
+                    from os import startfile
                     startfile(self.filename_path)
                 elif name == 'posix':
                     call(('xdg-open', self.filename_path))
