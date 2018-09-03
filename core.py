@@ -29,7 +29,7 @@ class App(QtWidgets.QWidget):
         self.error_hilo = ""
 
         RUTA_PRINCIPAL = path.abspath(path.dirname(__file__))
-        self.setWindowIcon(QtGui.QIcon(path.join(RUTA_PRINCIPAL, "icono.png")))
+        self.setWindowIcon(QtGui.QIcon(path.join(RUTA_PRINCIPAL, "icono.ico")))
  
         self.sombra = QtWidgets.QGraphicsDropShadowEffect()
         self.sombra.setBlurRadius(6)
@@ -67,7 +67,10 @@ class App(QtWidgets.QWidget):
                     call(('open', self.filename_path))
                 elif name == 'nt':
                     from os import startfile
-                    startfile(self.filename_path)
+                    indice = self.filename_path.rfind(".")
+                    ""
+                    if self.filename_path[indice:] == ".webm":
+                        startfile(self.filename_path.replace(".webm", ".mp3"))
                 elif name == 'posix':
                     call(('xdg-open', self.filename_path))
 

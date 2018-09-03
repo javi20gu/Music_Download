@@ -5,5 +5,6 @@ Para el mp3, se necesita Windows.
 #
 ![Imagen Programa](ejemploPrograma.PNG)
 #
+### Para ejecutar en Windows vaya a: ./Music_Download/dist/MusicDownload/MusicDownload.exe
 #### Versión: v0.9
 ---
