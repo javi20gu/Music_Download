@@ -50,6 +50,7 @@ class App(QtWidgets.QWidget):
         self.hilo = SecondThread(self)
         self.hilo.setUi(self.ui)
         self.hilo.start()
+        self.setFocus(True)
         self.hilo.finished.connect(self.error)
  
     def error(self):
@@ -68,9 +69,12 @@ class App(QtWidgets.QWidget):
                 elif name == 'nt':
                     from os import startfile
                     indice = self.filename_path.rfind(".")
-                    ""
+                    
                     if self.filename_path[indice:] == ".webm":
                         startfile(self.filename_path.replace(".webm", ".mp3"))
+                    else:
+                        startfile(self.filename_path)
+
                 elif name == 'posix':
                     call(('xdg-open', self.filename_path))
 
