@@ -36,15 +36,25 @@ class SecondThread(QtCore.QThread):
                     'format': 'm4a'}
  
             if self.boton == "mp3":
-                opciones = {
-                'format': 'bestaudio/best',
-                'outtmpl': join(self.ui.input_Ublicacion.text(), "%(title)s-%(id)s.%(ext)s"),
-                'ffmpeg_location': join(DIRECTORIO_PRINCIPAL, "ffmpeg-4.0.2-win64-static\\bin\\ffmpeg.exe"),
-                'postprocessors': [{
-                    'key': 'FFmpegExtractAudio',
-                    'preferredcodec': 'mp3',
-                    'preferredquality': '400',}],
-                }
+                if name == 'nt':
+                    opciones = {
+                    'format': 'bestaudio/best',
+                    'outtmpl': join(self.ui.input_Ublicacion.text(), "%(title)s-%(id)s.%(ext)s"),
+                    'ffmpeg_location': join(DIRECTORIO_PRINCIPAL, "ffmpeg-4.0.2-win64-static\\bin\\ffmpeg.exe"),
+                    'postprocessors': [{
+                        'key': 'FFmpegExtractAudio',
+                        'preferredcodec': 'mp3',
+                        'preferredquality': '400',}],
+                    }
+                else: 
+                    opciones = {
+                    'format': 'bestaudio/best',
+                    'outtmpl': join(self.ui.input_Ublicacion.text(), "%(title)s-%(id)s.%(ext)s"),
+                    'postprocessors': [{
+                        'key': 'FFmpegExtractAudio',
+                        'preferredcodec': 'mp3',
+                        'preferredquality': '400',}],}
+                    
                 
             with YoutubeDL(opciones) as ydl:
                 ydl.download([url])
