@@ -114,15 +114,12 @@ class App(QtWidgets.QWidget):
             QtWidgets.QMessageBox.critical(self, "Music Download", "Debe elegir la ublicación donde se quiere guardar.")
 
         if self.ui.input.text() != "" and self.ui.input_Ublicacion.text() != "":
-            if boton == "mp3" and name != 'nt':
-                QtWidgets.QMessageBox.critical(self, "Music Download", "Solo Compatible con Windows.")
-            else:
-                self.hilo = SecondThread(self)
-                self.hilo.setUi(self.ui)
-                self.hilo.setBoton(boton)
-                self.hilo.start()
-                self.setFocus(True)
-                self.hilo.finished.connect(self.error)
+            self.hilo = SecondThread(self)
+            self.hilo.setUi(self.ui)
+            self.hilo.setBoton(boton)
+            self.hilo.start()
+            self.setFocus(True)
+            self.hilo.finished.connect(self.error)
 
     def guardar(self):
         self.ruta = QtWidgets.QFileDialog.getExistingDirectory(self, 'Guardar Archivo')
