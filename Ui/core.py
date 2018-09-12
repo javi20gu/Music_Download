@@ -2,7 +2,8 @@ from os import getcwd, name
 from os.path import abspath, dirname, join
 from subprocess import call
 from sys import platform
-
+from zipfile import ZipFile
+from path import Path
 import youtube_dl
 from youtube_dl.YoutubeDL import YoutubeDL
 
@@ -37,6 +38,9 @@ class SecondThread(QtCore.QThread):
  
             if self.boton == "mp3":
                 if name == 'nt':
+                    if not Path(join(DIRECTORIO_PRINCIPAL ,'ffmpeg-4.0.2-win64-static')).exists():
+                        with ZipFile(join(DIRECTORIO_PRINCIPAL ,'ffmpeg-4.0.2-win64-static.zip')) as myzip:
+                            myzip.extractall()
                     opciones = {
                     'format': 'bestaudio/best',
                     'outtmpl': join(self.ui.input_Ublicacion.text(), "%(title)s-%(id)s.%(ext)s"),
