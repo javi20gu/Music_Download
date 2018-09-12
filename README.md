@@ -3,8 +3,8 @@
 Aplicación de Escritorio Multiplataforma, descarga vídeos de youtube en mp3, mp4 e mp4a.
 Para el mp3, se necesita Windows.
 #
-![Imagen Programa](ejemploPrograma.PNG)
+![Imagen Programa](ejm.png)
 #
 ### Para ejecutar en Windows vaya a: ./Music_Download/dist/MusicDownload/MusicDownload.exe
-#### Versión: v0.9
+#### Versión: v2
 ---

@@ -6,19 +6,22 @@ if __name__ == '__main__':
     from sys import argv
     from os.path import join, abspath, dirname
 
-    from Ui.Ui_Main import QtCore, QtWidgets, QtGui
+    from PyQt5.QtWidgets import QWidget, QApplication, QSplashScreen
+    from PyQt5.QtGui import QPixmap
+    from PyQt5.QtCore import Qt
 
+    DIRECTORIO_PRINCIPAL = join(abspath(dirname(__file__)))
 
-    cmd = QtWidgets.QApplication(argv)
-    ventana = QtWidgets.QSplashScreen(QtGui.QPixmap(join(abspath(dirname(__file__)), "loanding.png")),
-                                      QtCore.Qt.WindowStaysOnBottomHint) 
-    ventana.showMessage("Cargando...", QtCore.Qt.AlignBottom, QtCore.Qt.white)
+    cmd = QApplication(argv)
+    ventana = QSplashScreen(QPixmap(abspath(join(DIRECTORIO_PRINCIPAL, "asserts", "loanding.png"))),
+                                      Qt.WindowStaysOnBottomHint) 
+    ventana.showMessage("Cargando...", Qt.AlignBottom, Qt.darkCyan)
     ventana.show()
 
 
     from sys import exit, argv
 
-    from core import App
+    from Ui.core import App
 
 
     clase = App()
