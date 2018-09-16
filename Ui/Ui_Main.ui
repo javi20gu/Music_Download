@@ -1,84 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Ventana_Base</class>
- <widget class="QWidget" name="Ventana_Base">
+ <class>Ventana</class>
+ <widget class="QMainWindow" name="Ventana">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>641</width>
-    <height>511</height>
+    <width>550</width>
+    <height>397</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>Music Download</string>
+   <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">#Ventana {
+background-color: rgb(255, 255, 255);
+}
+#statusbar{
+background-color:rgb(112, 112, 112);
+color: rgb(113, 190, 161);
+	font: 87 10pt &quot;Segoe UI Black&quot;;
+}</string>
   </property>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>641</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: 0px solid #fff;</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QLabel" name="titulo">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>0</y>
-      <width>291</width>
-      <height>41</height>
-     </rect>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <property name="leftMargin">
+     <number>0</number>
     </property>
-    <property name="font">
-     <font>
-      <family>Segoe UI Black</family>
-      <pointsize>19</pointsize>
-      <weight>75</weight>
-      <italic>false</italic>
-      <bold>true</bold>
-      <underline>false</underline>
-     </font>
+    <property name="topMargin">
+     <number>0</number>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(112, 112, 112);</string>
+    <property name="rightMargin">
+     <number>0</number>
     </property>
-    <property name="text">
-     <string>Music Dowload</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="salir">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>0</y>
-      <width>71</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>HoloLens MDL2 Assets</family>
-      <pointsize>22</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#salir {
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0">
+        <property name="leftMargin">
+         <number>8</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="titulo">
+          <property name="font">
+           <font>
+            <family>Segoe UI Black</family>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(112, 112, 112);</string>
+          </property>
+          <property name="text">
+           <string>Music Download</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="salir">
+          <property name="minimumSize">
+           <size>
+            <width>69</width>
+            <height>37</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>HoloLens MDL2 Assets</family>
+            <pointsize>22</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#salir {
 	border: 0px solid #fff;
 	color: rgb(112, 112, 112);
 }
@@ -87,230 +94,375 @@
 	background-color: rgb(255, 0, 0);
 	color: rgb(255, 255, 255);
 }</string>
-    </property>
-    <property name="text">
-     <string>X</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QFrame" name="frame_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>40</y>
-     <width>641</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#frame_2 {
+          </property>
+          <property name="text">
+           <string>X</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame">
+        <property name="styleSheet">
+         <string notr="true">#frame {
 background-color: rgb(113, 190, 161);
-border: 0px solid #fff
+border: 0px solid #fff;
+margin: 0px
 }</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QLineEdit" name="input">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>601</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>22</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#input {
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="imagen_enlace">
+           <property name="minimumSize">
+            <size>
+             <width>1</width>
+             <height>4</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>58</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="input">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Consolas</family>
+             <pointsize>23</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#input {
 	border: 0px solid #fff;
 	border-radius: 7px;
 	background-color: rgb(255, 255, 255);
-	padding-left: 80px;
+	padding-left: 10px;
 	color: rgb(112, 112, 112);
 }</string>
-    </property>
-    <property name="placeholderText">
-     <string>Url</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="imagen_enlace">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>20</y>
-      <width>51</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(23,23,23, .0)</string>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-    <property name="buddy">
-     <cstring>input</cstring>
-    </property>
-   </widget>
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>20</y>
-      <width>20</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(255, 255, 255);
-color: rgb(112, 112, 112)</string>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="lineWidth">
-     <number>2</number>
-    </property>
-    <property name="midLineWidth">
-     <number>0</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QLabel" name="printGuardar">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>170</y>
-     <width>121</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Calibri Light</family>
-     <pointsize>11</pointsize>
-     <italic>false</italic>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgba(255, 255, 255, .0);</string>
-   </property>
-   <property name="text">
-    <string>Guardar como...</string>
-   </property>
-   <property name="buddy">
-    <cstring>input_Ublicacion</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="input_Ublicacion">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>190</y>
-     <width>601</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Consolas</family>
-     <pointsize>13</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#input_Ublicacion {
+           </property>
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>Url</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>23</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="leftMargin">
+       <number>7</number>
+      </property>
+      <property name="rightMargin">
+       <number>7</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Segoe UI Historic</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(255, 255, 255, .0);</string>
+        </property>
+        <property name="text">
+         <string>Guardar Como:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLineEdit" name="input_Ublicacion">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>42</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>22</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#input_Ublicacion {
 	border: 0.5px solid rgb(204, 204, 204);
 	border-radius: 5px;
 	padding-left: 7px;
 	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
+	color: rgb(112, 112, 112);
 	padding-right: 64px;
 }</string>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
-  </widget>
-  <widget class="Line" name="line_2">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>190</y>
-     <width>21</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgba(255, 255, 255, .0);
-color: rgb(204, 204, 204);
-</string>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Plain</enum>
-   </property>
-   <property name="lineWidth">
-    <number>2</number>
-   </property>
-   <property name="midLineWidth">
-    <number>0</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="botonCarpeta">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>190</y>
-     <width>61</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#botonCarpeta {
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string>Ruta</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="botonCarpeta">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>37</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#botonCarpeta {
 	background-color: rgba(255, 255, 255, .0);
 }
 #botonCarpeta:hover{
 	border-radius: 5px;
 	background-color: rgb(113, 190, 161)
 }</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>44</width>
-     <height>44</height>
-    </size>
-   </property>
-   <property name="autoRaise">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QProgressBar" name="proceso">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>480</y>
-     <width>621</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#proceso {
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="autoRaise">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Expanding</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>23</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <property name="leftMargin">
+       <number>8</number>
+      </property>
+      <property name="rightMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="printDescargar">
+        <property name="font">
+         <font>
+          <family>Segoe UI Historic</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Descargar Como:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>20</number>
+        </property>
+        <item>
+         <widget class="QToolButton" name="botonMp3">
+          <property name="styleSheet">
+           <string notr="true">#botonMp3:hover{
+border: 1px solid rgb(118, 118, 118);
+background-color: rgb(112, 112, 112);
+border-radius: 6px
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>63</width>
+            <height>86</height>
+           </size>
+          </property>
+          <property name="autoRaise">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="botonMp4a">
+          <property name="styleSheet">
+           <string notr="true">#botonMp4a:hover{
+border: 1px solid rgb(118, 118, 118);
+background-color: rgb(112, 112, 112);
+border-radius: 6px
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>63</width>
+            <height>86</height>
+           </size>
+          </property>
+          <property name="autoRaise">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="botonMp4">
+          <property name="styleSheet">
+           <string notr="true">#botonMp4:hover{
+border: 1px solid rgb(118, 118, 118);
+background-color: rgb(112, 112, 112);
+border-radius: 6px
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>63</width>
+            <height>86</height>
+           </size>
+          </property>
+          <property name="autoRaise">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>420</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>25</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="leftMargin">
+       <number>8</number>
+      </property>
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="rightMargin">
+       <number>8</number>
+      </property>
+      <property name="bottomMargin">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QProgressBar" name="proceso">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#proceso {
 	border: 1px solid #fff;
 	background-color: rgb(113, 190, 161);
 	border-radius: 4px
@@ -319,213 +471,24 @@ color: rgb(204, 204, 204);
 	background-color: rgb(112, 112, 112);
 	border-radius: 9px
 }</string>
-   </property>
-   <property name="maximum">
-    <number>100</number>
-   </property>
-   <property name="value">
-    <number>0</number>
-   </property>
-   <property name="textVisible">
-    <bool>false</bool>
-   </property>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
-  <widget class="QFrame" name="frame_3">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>130</y>
-     <width>641</width>
-     <height>381</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#frame_3{
-background-color: rgb(255, 255, 255);
-border: 0px solid #fff;
-}</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <widget class="QToolButton" name="botonMp3">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>180</y>
-      <width>61</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>Mp3</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#botonMp3:hover{
-border: 1px solid rgb(118, 118, 118);
-background-color: rgb(112, 112, 112);
-border-radius: 6px
-}</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>53</width>
-      <height>53</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="botonMp4">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>180</y>
-      <width>61</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>Mp4</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#botonMp4:hover{
-border: 1px solid rgb(118, 118, 118);
-background-color: rgb(112, 112, 112);
-border-radius: 6px
-}</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>53</width>
-      <height>53</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="botonMp4a">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>180</y>
-      <width>61</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>Mp4a</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#botonMp4a:hover{
-border: 1px solid rgb(118, 118, 118);
-background-color: rgb(112, 112, 112);
-border-radius: 6px
-}</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>53</width>
-      <height>53</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>140</y>
-      <width>141</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Calibri Light</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="text">
-     <string>Descargar como:</string>
-    </property>
-   </widget>
-   <widget class="Line" name="line_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>155</y>
-      <width>221</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(204, 204, 204);
-background-color: rgba(255, 255, 255, .0);</string>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="lineWidth">
-     <number>1</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_4">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>330</y>
-      <width>641</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(204, 204, 204);
-background-color: rgba(255, 255, 255,.0);</string>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-  </widget>
-  <zorder>frame</zorder>
-  <zorder>frame_2</zorder>
-  <zorder>frame_3</zorder>
-  <zorder>input_Ublicacion</zorder>
-  <zorder>printGuardar</zorder>
-  <zorder>proceso</zorder>
-  <zorder>botonCarpeta</zorder>
-  <zorder>line_2</zorder>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <tabstops>
-  <tabstop>input</tabstop>
-  <tabstop>input_Ublicacion</tabstop>
-  <tabstop>botonCarpeta</tabstop>
-  <tabstop>botonMp3</tabstop>
-  <tabstop>botonMp4a</tabstop>
-  <tabstop>botonMp4</tabstop>
-  <tabstop>salir</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

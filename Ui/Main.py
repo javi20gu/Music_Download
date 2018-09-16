@@ -1,43 +1,56 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Ui_Main.ui'
+# Form implementation generated from reading ui file 'Ui_Main.ui',
+# licensing of 'Ui_Main.ui' applies.
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created: Sun Sep 16 22:38:47 2018
+#      by: pyside2-uic  running on PySide2 5.11.1
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PySide2 import QtCore, QtGui, QtWidgets
 
-class Ui_Ventana_Base(object):
-    def setupUi(self, Ventana_Base):
-        Ventana_Base.setObjectName("Ventana_Base")
-        Ventana_Base.resize(641, 511)
-        Ventana_Base.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.frame = QtWidgets.QFrame(Ventana_Base)
-        self.frame.setGeometry(QtCore.QRect(0, 0, 641, 41))
-        self.frame.setStyleSheet("border: 0px solid #fff;")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
-        self.titulo = QtWidgets.QLabel(self.frame)
-        self.titulo.setGeometry(QtCore.QRect(20, 0, 291, 41))
+class Ui_Ventana(object):
+    def setupUi(self, Ventana):
+        Ventana.setObjectName("Ventana")
+        Ventana.resize(550, 397)
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        Ventana.setFont(font)
+        Ventana.setStyleSheet("#Ventana {\n"
+"background-color: rgb(255, 255, 255);\n"
+"}\n"
+"#statusbar{\n"
+"background-color:rgb(112, 112, 112);\n"
+"color: rgb(113, 190, 161);\n"
+"    font: 87 10pt \"Segoe UI Black\";\n"
+"}")
+        self.centralwidget = QtWidgets.QWidget(Ventana)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, -1)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setContentsMargins(8, -1, 0, -1)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.titulo = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Black")
-        font.setPointSize(19)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(75)
+        font.setPointSize(20)
         self.titulo.setFont(font)
         self.titulo.setStyleSheet("color: rgb(112, 112, 112);")
         self.titulo.setObjectName("titulo")
-        self.salir = QtWidgets.QPushButton(self.frame)
-        self.salir.setGeometry(QtCore.QRect(570, 0, 71, 41))
+        self.horizontalLayout_3.addWidget(self.titulo)
+        self.salir = QtWidgets.QPushButton(self.centralwidget)
+        self.salir.setMinimumSize(QtCore.QSize(69, 37))
         font = QtGui.QFont()
         font.setFamily("HoloLens MDL2 Assets")
         font.setPointSize(22)
-        font.setBold(True)
         font.setWeight(75)
+        font.setBold(True)
         self.salir.setFont(font)
         self.salir.setStyleSheet("#salir {\n"
 "    border: 0px solid #fff;\n"
@@ -49,80 +62,82 @@ class Ui_Ventana_Base(object):
 "    color: rgb(255, 255, 255);\n"
 "}")
         self.salir.setObjectName("salir")
-        self.frame_2 = QtWidgets.QFrame(Ventana_Base)
-        self.frame_2.setGeometry(QtCore.QRect(0, 40, 641, 91))
-        self.frame_2.setStyleSheet("#frame_2 {\n"
+        self.horizontalLayout_3.addWidget(self.salir)
+        self.horizontalLayout_3.setStretch(0, 1)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setStyleSheet("#frame {\n"
 "background-color: rgb(113, 190, 161);\n"
-"border: 0px solid #fff\n"
+"border: 0px solid #fff;\n"
+"margin: 0px\n"
 "}")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.input = QtWidgets.QLineEdit(self.frame_2)
-        self.input.setGeometry(QtCore.QRect(20, 20, 601, 51))
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.imagen_enlace = QtWidgets.QLabel(self.frame)
+        self.imagen_enlace.setMinimumSize(QtCore.QSize(1, 4))
+        self.imagen_enlace.setMaximumSize(QtCore.QSize(58, 48))
+        self.imagen_enlace.setText("")
+        self.imagen_enlace.setScaledContents(True)
+        self.imagen_enlace.setObjectName("imagen_enlace")
+        self.horizontalLayout_4.addWidget(self.imagen_enlace)
+        self.input = QtWidgets.QLineEdit(self.frame)
+        self.input.setMinimumSize(QtCore.QSize(0, 48))
         font = QtGui.QFont()
-        font.setPointSize(22)
+        font.setFamily("Consolas")
+        font.setPointSize(23)
+        font.setWeight(75)
+        font.setBold(True)
         self.input.setFont(font)
         self.input.setStyleSheet("#input {\n"
 "    border: 0px solid #fff;\n"
 "    border-radius: 7px;\n"
 "    background-color: rgb(255, 255, 255);\n"
-"    padding-left: 80px;\n"
+"    padding-left: 10px;\n"
 "    color: rgb(112, 112, 112);\n"
 "}")
+        self.input.setInputMask("")
+        self.input.setDragEnabled(True)
         self.input.setObjectName("input")
-        self.imagen_enlace = QtWidgets.QLabel(self.frame_2)
-        self.imagen_enlace.setGeometry(QtCore.QRect(30, 20, 51, 51))
-        self.imagen_enlace.setStyleSheet("background-color: rgba(23,23,23, .0)")
-        self.imagen_enlace.setScaledContents(True)
-        self.imagen_enlace.setObjectName("imagen_enlace")
-        self.line = QtWidgets.QFrame(self.frame_2)
-        self.line.setGeometry(QtCore.QRect(80, 20, 20, 51))
-        self.line.setStyleSheet("background-color: rgba(255, 255, 255);\n"
-"color: rgb(112, 112, 112)")
-        self.line.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.line.setLineWidth(2)
-        self.line.setMidLineWidth(0)
-        self.line.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line.setObjectName("line")
-        self.printGuardar = QtWidgets.QLabel(Ventana_Base)
-        self.printGuardar.setGeometry(QtCore.QRect(20, 170, 121, 21))
+        self.horizontalLayout_4.addWidget(self.input)
+        self.verticalLayout_2.addWidget(self.frame)
+        self.verticalLayout_5.addLayout(self.verticalLayout_2)
+        spacerItem = QtWidgets.QSpacerItem(20, 23, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setContentsMargins(7, -1, 7, -1)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
-        font.setFamily("Calibri Light")
-        font.setPointSize(11)
-        font.setItalic(False)
-        self.printGuardar.setFont(font)
-        self.printGuardar.setStyleSheet("background-color: rgba(255, 255, 255, .0);")
-        self.printGuardar.setObjectName("printGuardar")
-        self.input_Ublicacion = QtWidgets.QLineEdit(Ventana_Base)
-        self.input_Ublicacion.setGeometry(QtCore.QRect(20, 190, 601, 31))
+        font.setFamily("Segoe UI Historic")
+        font.setPointSize(10)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("background-color: rgba(255, 255, 255, .0);")
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_4.addWidget(self.label_2)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.input_Ublicacion = QtWidgets.QLineEdit(self.centralwidget)
+        self.input_Ublicacion.setMinimumSize(QtCore.QSize(0, 42))
         font = QtGui.QFont()
-        font.setFamily("Consolas")
-        font.setPointSize(13)
+        font.setFamily("Calibri")
+        font.setPointSize(22)
         self.input_Ublicacion.setFont(font)
         self.input_Ublicacion.setStyleSheet("#input_Ublicacion {\n"
 "    border: 0.5px solid rgb(204, 204, 204);\n"
 "    border-radius: 5px;\n"
 "    padding-left: 7px;\n"
 "    background-color: rgb(255, 255, 255);\n"
-"    color: rgb(0, 0, 0);\n"
+"    color: rgb(112, 112, 112);\n"
 "    padding-right: 64px;\n"
 "}")
         self.input_Ublicacion.setReadOnly(True)
-        self.input_Ublicacion.setPlaceholderText("")
         self.input_Ublicacion.setObjectName("input_Ublicacion")
-        self.line_2 = QtWidgets.QFrame(Ventana_Base)
-        self.line_2.setGeometry(QtCore.QRect(550, 190, 21, 31))
-        self.line_2.setStyleSheet("background-color: rgba(255, 255, 255, .0);\n"
-"color: rgb(204, 204, 204);\n"
-"")
-        self.line_2.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.line_2.setLineWidth(2)
-        self.line_2.setMidLineWidth(0)
-        self.line_2.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_2.setObjectName("line_2")
-        self.botonCarpeta = QtWidgets.QToolButton(Ventana_Base)
-        self.botonCarpeta.setGeometry(QtCore.QRect(560, 190, 61, 31))
+        self.horizontalLayout_2.addWidget(self.input_Ublicacion)
+        self.botonCarpeta = QtWidgets.QToolButton(self.centralwidget)
+        self.botonCarpeta.setMinimumSize(QtCore.QSize(61, 37))
         self.botonCarpeta.setStyleSheet("#botonCarpeta {\n"
 "    background-color: rgba(255, 255, 255, .0);\n"
 "}\n"
@@ -130,11 +145,82 @@ class Ui_Ventana_Base(object):
 "    border-radius: 5px;\n"
 "    background-color: rgb(113, 190, 161)\n"
 "}")
-        self.botonCarpeta.setIconSize(QtCore.QSize(44, 44))
+        self.botonCarpeta.setText("")
+        self.botonCarpeta.setIconSize(QtCore.QSize(35, 35))
         self.botonCarpeta.setAutoRaise(True)
         self.botonCarpeta.setObjectName("botonCarpeta")
-        self.proceso = QtWidgets.QProgressBar(Ventana_Base)
-        self.proceso.setGeometry(QtCore.QRect(10, 480, 621, 21))
+        self.horizontalLayout_2.addWidget(self.botonCarpeta)
+        self.verticalLayout_4.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_5.addLayout(self.verticalLayout_4)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 23, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem1)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setSpacing(3)
+        self.verticalLayout_3.setContentsMargins(8, -1, 8, -1)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.printDescargar = QtWidgets.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Historic")
+        font.setPointSize(10)
+        font.setWeight(50)
+        font.setBold(False)
+        self.printDescargar.setFont(font)
+        self.printDescargar.setObjectName("printDescargar")
+        self.verticalLayout_3.addWidget(self.printDescargar)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setSpacing(20)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.botonMp3 = QtWidgets.QToolButton(self.centralwidget)
+        self.botonMp3.setStyleSheet("#botonMp3:hover{\n"
+"border: 1px solid rgb(118, 118, 118);\n"
+"background-color: rgb(112, 112, 112);\n"
+"border-radius: 6px\n"
+"}")
+        self.botonMp3.setText("")
+        self.botonMp3.setIconSize(QtCore.QSize(63, 86))
+        self.botonMp3.setAutoRaise(True)
+        self.botonMp3.setObjectName("botonMp3")
+        self.horizontalLayout.addWidget(self.botonMp3)
+        self.botonMp4a = QtWidgets.QToolButton(self.centralwidget)
+        self.botonMp4a.setStyleSheet("#botonMp4a:hover{\n"
+"border: 1px solid rgb(118, 118, 118);\n"
+"background-color: rgb(112, 112, 112);\n"
+"border-radius: 6px\n"
+"}")
+        self.botonMp4a.setText("")
+        self.botonMp4a.setIconSize(QtCore.QSize(63, 86))
+        self.botonMp4a.setAutoRaise(True)
+        self.botonMp4a.setObjectName("botonMp4a")
+        self.horizontalLayout.addWidget(self.botonMp4a)
+        self.botonMp4 = QtWidgets.QToolButton(self.centralwidget)
+        self.botonMp4.setStyleSheet("#botonMp4:hover{\n"
+"border: 1px solid rgb(118, 118, 118);\n"
+"background-color: rgb(112, 112, 112);\n"
+"border-radius: 6px\n"
+"}")
+        self.botonMp4.setText("")
+        self.botonMp4.setIconSize(QtCore.QSize(63, 86))
+        self.botonMp4.setAutoRaise(True)
+        self.botonMp4.setObjectName("botonMp4")
+        self.horizontalLayout.addWidget(self.botonMp4)
+        spacerItem2 = QtWidgets.QSpacerItem(420, 0, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem2)
+        self.verticalLayout_3.addLayout(self.horizontalLayout)
+        self.verticalLayout_5.addLayout(self.verticalLayout_3)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem3)
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.verticalLayout_5.addWidget(self.line)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setContentsMargins(8, 3, 8, 3)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.proceso = QtWidgets.QProgressBar(self.centralwidget)
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        self.proceso.setFont(font)
         self.proceso.setStyleSheet("#proceso {\n"
 "    border: 1px solid #fff;\n"
 "    background-color: rgb(113, 190, 161);\n"
@@ -148,101 +234,22 @@ class Ui_Ventana_Base(object):
         self.proceso.setProperty("value", 0)
         self.proceso.setTextVisible(False)
         self.proceso.setObjectName("proceso")
-        self.frame_3 = QtWidgets.QFrame(Ventana_Base)
-        self.frame_3.setGeometry(QtCore.QRect(0, 130, 641, 381))
-        self.frame_3.setStyleSheet("#frame_3{\n"
-"background-color: rgb(255, 255, 255);\n"
-"border: 0px solid #fff;\n"
-"}")
-        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_3.setObjectName("frame_3")
-        self.botonMp3 = QtWidgets.QToolButton(self.frame_3)
-        self.botonMp3.setEnabled(True)
-        self.botonMp3.setGeometry(QtCore.QRect(20, 180, 61, 71))
-        self.botonMp3.setStyleSheet("#botonMp3:hover{\n"
-"border: 1px solid rgb(118, 118, 118);\n"
-"background-color: rgb(112, 112, 112);\n"
-"border-radius: 6px\n"
-"}")
-        self.botonMp3.setIconSize(QtCore.QSize(53, 53))
-        self.botonMp3.setAutoRaise(True)
-        self.botonMp3.setObjectName("botonMp3")
-        self.botonMp4 = QtWidgets.QToolButton(self.frame_3)
-        self.botonMp4.setEnabled(True)
-        self.botonMp4.setGeometry(QtCore.QRect(180, 180, 61, 71))
-        self.botonMp4.setStyleSheet("#botonMp4:hover{\n"
-"border: 1px solid rgb(118, 118, 118);\n"
-"background-color: rgb(112, 112, 112);\n"
-"border-radius: 6px\n"
-"}")
-        self.botonMp4.setIconSize(QtCore.QSize(53, 53))
-        self.botonMp4.setAutoRaise(True)
-        self.botonMp4.setObjectName("botonMp4")
-        self.botonMp4a = QtWidgets.QToolButton(self.frame_3)
-        self.botonMp4a.setGeometry(QtCore.QRect(100, 180, 61, 71))
-        self.botonMp4a.setStyleSheet("#botonMp4a:hover{\n"
-"border: 1px solid rgb(118, 118, 118);\n"
-"background-color: rgb(112, 112, 112);\n"
-"border-radius: 6px\n"
-"}")
-        self.botonMp4a.setIconSize(QtCore.QSize(53, 53))
-        self.botonMp4a.setAutoRaise(True)
-        self.botonMp4a.setObjectName("botonMp4a")
-        self.label = QtWidgets.QLabel(self.frame_3)
-        self.label.setGeometry(QtCore.QRect(20, 140, 141, 21))
-        font = QtGui.QFont()
-        font.setFamily("Calibri Light")
-        font.setPointSize(11)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        font.setKerning(True)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
-        self.line_3 = QtWidgets.QFrame(self.frame_3)
-        self.line_3.setGeometry(QtCore.QRect(20, 155, 221, 21))
-        self.line_3.setStyleSheet("color: rgb(204, 204, 204);\n"
-"background-color: rgba(255, 255, 255, .0);")
-        self.line_3.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.line_3.setLineWidth(1)
-        self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_3.setObjectName("line_3")
-        self.line_4 = QtWidgets.QFrame(self.frame_3)
-        self.line_4.setGeometry(QtCore.QRect(0, 330, 641, 21))
-        self.line_4.setStyleSheet("color: rgb(204, 204, 204);\n"
-"background-color: rgba(255, 255, 255,.0);")
-        self.line_4.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_4.setObjectName("line_4")
-        self.frame.raise_()
-        self.frame_2.raise_()
-        self.frame_3.raise_()
-        self.input_Ublicacion.raise_()
-        self.printGuardar.raise_()
-        self.proceso.raise_()
-        self.botonCarpeta.raise_()
-        self.line_2.raise_()
-        self.imagen_enlace.setBuddy(self.input)
-        self.printGuardar.setBuddy(self.input_Ublicacion)
+        self.verticalLayout.addWidget(self.proceso)
+        self.verticalLayout_5.addLayout(self.verticalLayout)
+        Ventana.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(Ventana)
+        self.statusbar.setObjectName("statusbar")
+        Ventana.setStatusBar(self.statusbar)
 
-        self.retranslateUi(Ventana_Base)
-        QtCore.QMetaObject.connectSlotsByName(Ventana_Base)
-        Ventana_Base.setTabOrder(self.input, self.input_Ublicacion)
-        Ventana_Base.setTabOrder(self.input_Ublicacion, self.botonCarpeta)
-        Ventana_Base.setTabOrder(self.botonCarpeta, self.botonMp3)
-        Ventana_Base.setTabOrder(self.botonMp3, self.botonMp4a)
-        Ventana_Base.setTabOrder(self.botonMp4a, self.botonMp4)
-        Ventana_Base.setTabOrder(self.botonMp4, self.salir)
+        self.retranslateUi(Ventana)
+        QtCore.QMetaObject.connectSlotsByName(Ventana)
 
-    def retranslateUi(self, Ventana_Base):
-        _translate = QtCore.QCoreApplication.translate
-        Ventana_Base.setWindowTitle(_translate("Ventana_Base", "Music Download"))
-        self.titulo.setText(_translate("Ventana_Base", "Music Dowload"))
-        self.salir.setText(_translate("Ventana_Base", "X"))
-        self.input.setPlaceholderText(_translate("Ventana_Base", "Url"))
-        self.printGuardar.setText(_translate("Ventana_Base", "Guardar como..."))
-        self.botonMp3.setToolTip(_translate("Ventana_Base", "Mp3"))
-        self.botonMp4.setToolTip(_translate("Ventana_Base", "Mp4"))
-        self.botonMp4a.setToolTip(_translate("Ventana_Base", "Mp4a"))
-        self.label.setText(_translate("Ventana_Base", "Descargar como:"))
+    def retranslateUi(self, Ventana):
+        Ventana.setWindowTitle(QtWidgets.QApplication.translate("Ventana", "MainWindow", None, -1))
+        self.titulo.setText(QtWidgets.QApplication.translate("Ventana", "Music Download", None, -1))
+        self.salir.setText(QtWidgets.QApplication.translate("Ventana", "X", None, -1))
+        self.input.setPlaceholderText(QtWidgets.QApplication.translate("Ventana", "Url", None, -1))
+        self.label_2.setText(QtWidgets.QApplication.translate("Ventana", "Guardar Como:", None, -1))
+        self.input_Ublicacion.setPlaceholderText(QtWidgets.QApplication.translate("Ventana", "Ruta", None, -1))
+        self.printDescargar.setText(QtWidgets.QApplication.translate("Ventana", "Descargar Como:", None, -1))
 
