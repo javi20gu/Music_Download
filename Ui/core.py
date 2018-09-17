@@ -1,4 +1,4 @@
-from os import name
+from os import name, getcwd
 from os.path import abspath, dirname, join
 from pathlib import Path
 from subprocess import call
@@ -10,11 +10,11 @@ from youtube_dl.YoutubeDL import YoutubeDL
 
 from Ui.Main import QtCore, QtGui, QtWidgets, Ui_Ventana
 
-DIRECTORIO_PRINCIPAL = abspath(join(dirname(dirname(__file__))))
+DIRECTORIO_PRINCIPAL = abspath(dirname(dirname(__file__)))
 
 
 class SecondThread(QtCore.QThread):
-
+    
     def __init__(self, parent):
         super().__init__()
         self.parent = parent
@@ -26,11 +26,14 @@ class SecondThread(QtCore.QThread):
         self.boton = boton
 
     def run(self):
+
         self.ui.statusbar.showMessage("Descargando...")
         self.ui.proceso.setMaximum(0)
-        self.ui.proceso.setValue(0)
+        
         try:
-            opciones = {'outtmpl': join(self.parent.ui.input_Ublicacion.text(), "%(title)s-%(id)s.%(ext)s"), }
+
+            opciones = {'outtmpl': join(self.parent.ui.input_Ublicacion.text(), "%(title)s-%(id)s.%(ext)s")} 
+            
             url = self.ui.input.text()
 
             if self.boton == "mp4a":
@@ -43,11 +46,11 @@ class SecondThread(QtCore.QThread):
                     if not Path(abspath(join(DIRECTORIO_PRINCIPAL, 'ffmpeg-4.0.2-win64-static'))).exists():
                         with ZipFile(abspath(join(DIRECTORIO_PRINCIPAL, 'ffmpeg-4.0.2-win64-static.zip'))) as myzip:
                             myzip.extractall()
+
                     opciones = {
                         'format': 'bestaudio/best',
                         'outtmpl': join(self.ui.input_Ublicacion.text(), "%(title)s-%(id)s.%(ext)s"),
-                        'ffmpeg_location': abspath(
-                            join(DIRECTORIO_PRINCIPAL, "ffmpeg-4.0.2-win64-static/bin/ffmpeg.exe")),
+                        'ffmpeg_location': abspath(join(DIRECTORIO_PRINCIPAL, "ffmpeg-4.0.2-win64-static", "bin", "ffmpeg.exe")),
                         'postprocessors': [{
                             'key': 'FFmpegExtractAudio',
                             'preferredcodec': 'mp3',
@@ -88,9 +91,9 @@ class App(QtWidgets.QMainWindow):
         self._drag_pos = None
         self.thread_error = False
 
-        self.ui.imagen_enlace.setPixmap(QtGui.QPixmap(abspath(join(DIRECTORIO_PRINCIPAL, "asserts\enlaze.png"))))
-        self.ui.botonMp3.setIcon(QtGui.QIcon(abspath(join(DIRECTORIO_PRINCIPAL, "asserts\mp3.png"))))
-        self.ui.botonMp4a.setIcon(QtGui.QIcon(abspath(join(DIRECTORIO_PRINCIPAL, "asserts\m4a.png"))))
+        self.ui.imagen_enlace.setPixmap(QtGui.QPixmap(abspath(join(DIRECTORIO_PRINCIPAL, "asserts", "enlaze.png"))))
+        self.ui.botonMp3.setIcon(QtGui.QIcon(abspath(join(DIRECTORIO_PRINCIPAL, "asserts", "mp3.png"))))
+        self.ui.botonMp4a.setIcon(QtGui.QIcon(abspath(join(DIRECTORIO_PRINCIPAL, "asserts", "m4a.png"))))
         self.ui.botonMp4.setIcon(QtGui.QIcon(abspath(join(DIRECTORIO_PRINCIPAL, "asserts", "mp4.png"))))
         self.ui.botonCarpeta.setIcon(QtGui.QIcon(abspath(join(DIRECTORIO_PRINCIPAL, "asserts", "carpeta.png"))))
 
@@ -151,7 +154,6 @@ class App(QtWidgets.QMainWindow):
         else:
             comprobar = QtWidgets.QMessageBox.information(self, 'MusicDownload', "¿Deseas escuchar la canción?",
                                                           QtWidgets.QMessageBox.Yes, QtWidgets.QMessageBox.No)
-
             if comprobar == QtWidgets.QMessageBox.Yes:
 
                 if platform.startswith('darwin'):
