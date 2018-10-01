@@ -2,8 +2,9 @@ from os import name
 from os.path import abspath, dirname, join
 from pathlib import Path
 from zipfile import ZipFile
-from PySide2.QtCore import QThread
+
 import youtube_dl
+from PySide2.QtCore import QThread
 from youtube_dl.YoutubeDL import YoutubeDL
 
 DIRECTORIO_PRINCIPAL = abspath(dirname(dirname(__file__)))
