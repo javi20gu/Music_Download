@@ -133,11 +133,13 @@ class Proceso(QWidget):
         self.descarga.finished.connect(self.finalizar)
 
     def finalizar(self):
+
         errores = tuple(self.ui_proceso.error)
 
         if self.ui_proceso.excepcion:
             for error in errores:
                 QMessageBox.warning(self, "Music Download", str(error))
+
         self.ui_proceso.descripcion_proceso.setText("Finalizado")
         self.ui_proceso.proceso.setMaximum(100)
         self.ui_proceso.boton_volver.setEnabled(True)

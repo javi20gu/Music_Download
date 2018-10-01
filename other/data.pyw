@@ -24,7 +24,7 @@ class Data(QThread):
         self.urls = urls
 
     def run(self):
-
+        
         for formato, check in self.formatos.items():
             if check:
                 for cancion_numero, url in enumerate(self.urls):
