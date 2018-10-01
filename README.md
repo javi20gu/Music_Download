@@ -7,6 +7,6 @@ Aplicación de Escritorio Multiplataforma, descarga vídeos de youtube en mp3, m
 #
 
 ### [Descarga en Windows](https://github.com/javi20gu/Music_Download-Windows/archive/master.zip)
-#### Versión: v2.3
+#### Versión: v2.4
 
 ---
