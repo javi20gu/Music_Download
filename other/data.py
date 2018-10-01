@@ -18,8 +18,8 @@ class Data(QThread):
         "mp4": False,
     }
 
-    def __init__(self, padre: object, urls: list):
-        super().__init__()
+    def __init__(self, padre, urls: list):
+        QThread.__init__(self)
         self.padre = padre
         self.urls = urls
 
