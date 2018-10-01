@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ui_Proceso</class>
+ <widget class="QWidget" name="Ui_Proceso">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>518</width>
+    <height>252</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Music Download - Descargando y Convirtiendo</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Ui_Proceso {
+background-color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>13</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="titulo">
+     <property name="font">
+      <font>
+       <family>Nirmala UI Semilight</family>
+       <pointsize>49</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(94, 94, 94);</string>
+     </property>
+     <property name="text">
+      <string>Manos a la Obra  </string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::MinimumExpanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>19</width>
+       <height>14</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="descripcion_proceso">
+       <property name="font">
+        <font>
+         <family>Nirmala UI Semilight</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(130, 130, 130);</string>
+       </property>
+       <property name="text">
+        <string>Descargando y convertiendo en el formato solicitado...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="proceso">
+       <property name="styleSheet">
+        <string notr="true">#proceso{
+	border-radius: 3px;
+	border: 1px solid rgb(235, 235, 235);
+	background-color: rgb(255, 255, 255)
+}
+#proceso:chunk{
+	border-radius:3px;
+	background-color: rgb(29, 202, 197)
+}</string>
+       </property>
+       <property name="maximum">
+        <number>0</number>
+       </property>
+       <property name="value">
+        <number>-1</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="boton_volver">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>109</width>
+         <height>37</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#boton_volver{
+border-right: 2px solid rgb(93, 93, 93);
+border-bottom: 2px solid rgb(93, 93, 93);
+border-left: 1px solid rgb(172, 172, 172);
+border-top: 1px solid rgb(172, 172, 172);
+border-radius: 5px;
+color: rgb(93, 93, 93);
+}
+#boton_volver:pressed {
+border-left: 2px solid rgb(93, 93, 93);
+border-top: 2px solid rgb(93, 93, 93);
+border-right: 1px solid rgb(172, 172, 172);
+border-bottom:1px solid rgb(172, 172, 172);
+border-radius: 5px;
+color: rgb(93, 93, 93);
+}
+#boton_volver:disabled {
+border-left: 1px solid rgb(235, 235, 235);
+border-top: 1px solid rgb(235, 235, 235);
+border-right: 1px solid rgb(235, 235, 235);
+border-bottom:1px solid rgb(235, 235, 235);
+border-radius: 5px;
+color: rgb(204, 204, 204)
+}</string>
+       </property>
+       <property name="text">
+        <string>Volver</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="boton_salir">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>109</width>
+         <height>37</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#boton_salir{
+border-right: 3px solid rgb(121, 53, 21);
+border-bottom: 3px solid rgb(121, 53, 21);
+border-left: 1px solid rgb(172, 172, 172);
+border-top: 1px solid rgb(172, 172, 172);
+border-radius: 5px;
+color: rgb(121, 53, 21);
+}
+#boton_salir:pressed {
+border-left: 3px solid rgb(121, 53, 21);
+border-top: 3px solid rgb(121, 53, 21);
+border-right: 1px solid rgb(172, 172, 172);
+border-bottom:1px solid rgb(172, 172, 172);
+border-radius: 5px;
+color: rgb(121, 53, 21);
+}
+#boton_salir:disabled {
+border-left: 1px solid rgb(235, 235, 235);
+border-top: 1px solid rgb(235, 235, 235);
+border-right: 1px solid rgb(235, 235, 235);
+border-bottom:1px solid rgb(235, 235, 235);
+border-radius: 5px;
+color: rgb(204, 204, 204)
+}</string>
+       </property>
+       <property name="text">
+        <string>Salir</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>boton_volver</tabstop>
+  <tabstop>boton_salir</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

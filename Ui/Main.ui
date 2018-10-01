@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ui_Main</class>
+ <widget class="QWidget" name="Ui_Main">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>758</width>
+    <height>496</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Music Download</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Ui_Main{
+background-color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="layout_titulo">
+     <property name="spacing">
+      <number>5</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="titulo">
+       <property name="font">
+        <font>
+         <family>Nirmala UI Semilight</family>
+         <pointsize>49</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(94, 94, 94);</string>
+       </property>
+       <property name="text">
+        <string>Bienvenido</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="proceso">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>5</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>10000000</width>
+         <height>5</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#proceso{
+	border-radius:2px;
+	background-color: rgb(245, 245, 245);
+}
+#proceso:chunk{
+	border-radius:2px;
+	background-color: rgb(29, 202, 197)
+}</string>
+       </property>
+       <property name="value">
+        <number>25</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>719</width>
+       <height>21</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="descripcion_lista">
+     <property name="font">
+      <font>
+       <family>Nirmala UI Semilight</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(130, 130, 130);</string>
+     </property>
+     <property name="text">
+      <string>Para empezar, pulse el botón añadir para añadir canciones a la cola</string>
+     </property>
+     <property name="buddy">
+      <cstring>lista_elementos</cstring>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QListWidget" name="lista_elementos">
+     <property name="font">
+      <font>
+       <family>Segoe UI Black</family>
+       <pointsize>13</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(103, 103, 103);</string>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="boton_anadir">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>102</width>
+         <height>33</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#boton_anadir{
+border: 2px solid rgb(97, 97, 97);
+border-radius: 5px;
+color:#616161
+}
+#boton_anadir:hover {
+border: 2px solid #616161;
+border-radius: 5px;
+background-color: #616161;
+color: rgb(255, 255, 255)
+}
+#boton_anadir:disabled {
+border-left: 1px solid rgb(235, 235, 235);
+border-top: 1px solid rgb(235, 235, 235);
+border-right: 1px solid rgb(235, 235, 235);
+border-bottom:1px solid rgb(235, 235, 235);
+border-radius: 5px;
+color: rgb(204, 204, 204)
+}</string>
+       </property>
+       <property name="text">
+        <string>Añadir</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="boton_borrar">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>102</width>
+         <height>33</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#boton_borrar{
+border: 2px solid rgb(97, 97, 97);
+border-radius: 5px;
+color:#616161
+}
+#boton_borrar:hover {
+border: 2px solid #616161;
+border-radius: 5px;
+background-color: #616161;
+color: rgb(255, 255, 255)
+}
+#boton_borrar:disabled {
+border-left: 1px solid rgb(235, 235, 235);
+border-top: 1px solid rgb(235, 235, 235);
+border-right: 1px solid rgb(235, 235, 235);
+border-bottom:1px solid rgb(235, 235, 235);
+border-radius: 5px;
+color: rgb(204, 204, 204)
+}</string>
+       </property>
+       <property name="text">
+        <string>Borrar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Minimum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>24</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layout_botones">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>37</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelar">
+       <property name="minimumSize">
+        <size>
+         <width>109</width>
+         <height>37</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#cancelar {
+	border: 2px solid  rgb(112, 112, 112);
+	border-radius: 4px;
+	color: rgb(102, 102, 102)
+}
+#cancelar:hover{
+	border: 2px solid  rgb(112, 112, 112);
+	background-color: rgb(112, 112, 112);
+	border-radius: 4px;
+	color: rgb(255, 255, 255)
+}</string>
+       </property>
+       <property name="text">
+        <string>Cancelar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Preferred</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>18</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="siguiente">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>109</width>
+         <height>37</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#siguiente{
+border: 2px solid #00C53B;
+border-radius: 5px;
+color: #00C53B;
+}
+#siguiente:hover {
+border: 2px solid #00C53B;
+border-radius: 5px;
+background-color: rgb(0, 197, 59);
+color: rgb(255, 255, 255)
+}
+#siguiente:disabled {
+border-left: 1px solid rgb(235, 235, 235);
+border-top: 1px solid rgb(235, 235, 235);
+border-right: 1px solid rgb(235, 235, 235);
+border-bottom:1px solid rgb(235, 235, 235);
+border-radius: 5px;
+color: rgb(204, 204, 204)
+}</string>
+       </property>
+       <property name="text">
+        <string>Siguiente</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lista_elementos</tabstop>
+  <tabstop>boton_anadir</tabstop>
+  <tabstop>boton_borrar</tabstop>
+  <tabstop>cancelar</tabstop>
+  <tabstop>siguiente</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
