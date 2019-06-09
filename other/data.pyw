@@ -11,7 +11,7 @@ DIRECTORIO_PRINCIPAL = abspath(dirname(dirname(__file__)))
 
 
 class Data(QThread):
-    localizacion: str = ""
+    localizacion = ""
     formatos = {
         "mp3": False,
         "mp4a": False,
