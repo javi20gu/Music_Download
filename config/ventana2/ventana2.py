@@ -53,7 +53,8 @@ class FrameUblicacion(Ui_Ventana2, QFrame):
         self.padre.label_tipo_formato.setStyleSheet(self.STYLE["desactive"])
         self.padre.label_descarga.setStyleSheet(self.STYLE["desactive"])
         self.padre.label_ublicacion.setStyleSheet(self.STYLE["active"])
-        if self.carpeta_output == '':
+
+        if self.inputUblicacion.text() == '':
             self.boton_siguiente.setDisabled(True)
         else:
             self.boton_siguiente.setDisabled(False)
