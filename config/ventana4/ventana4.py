@@ -34,10 +34,9 @@ class FrameDescarga(Ui_Descarga, QFrame):
         self.boton_salir.clicked.connect(self.salir)
         self.boton_inicio.clicked.connect(self.inicio)
 
-    @Slot(QEvent)
+    #@Slot(QEvent)
     def showEvent(self, event: QEvent):
-        self.proceso.setMaximum(0)
-        self.proceso.setValue(-1)
+        self.proceso.setValue(0)
         self.boton_salir.setEnabled(False)
         self.boton_inicio.setEnabled(False)
         self.padre.label_anadir_canciones.setStyleSheet(self.STYLE["desactive"])
@@ -47,7 +46,18 @@ class FrameDescarga(Ui_Descarga, QFrame):
         super().showEvent(event)
         self.download = Download(self, self.state)
         self.download.start(QThread.HighPriority)
+        self.download.status.connect(self.progress)
         self.download.is_error.connect(self.is_error)
+
+    @Slot(str)
+    def progress(self, porcentaje: str):
+        if int(float(porcentaje.split("%")[0].strip())) == 100:
+            self.label_subtitulo.setText("Eliminando fichero .webm (Puede durar unos minutos)...")
+            self.proceso.setMaximum(0)
+            self.proceso.setValue(-1)
+        else:
+            self.proceso.setMaximum(100)
+            self.proceso.setValue(int(float(porcentaje.split("%")[0].strip())))
 
     @Slot(bool, str, int)
     @Slot(bool, None, int)

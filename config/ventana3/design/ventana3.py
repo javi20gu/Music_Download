@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'Ui_Ventana3.ui',
 # licensing of 'Ui_Ventana3.ui' applies.
 #
-# Created: Thu Jul 11 17:14:39 2019
+# Created: Sat Jul 13 03:06:47 2019
 #      by: pyside2-uic  running on PySide2 5.12.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -53,6 +53,7 @@ class Ui_Formato(object):
         self.frame_card_mp3.setObjectName("frame_card_mp3")
         self.frame_card_arriba_mp3 = QtWidgets.QFrame(self.frame_card_mp3)
         self.frame_card_arriba_mp3.setGeometry(QtCore.QRect(0, 0, 181, 211))
+        self.frame_card_arriba_mp3.setCursor(QtCore.Qt.PointingHandCursor)
         self.frame_card_arriba_mp3.setStyleSheet("#frame_card_arriba_mp3 {\n"
 "border: 1px solid #777;\n"
 "border-radius: 15px;\n"
@@ -105,6 +106,7 @@ class Ui_Formato(object):
         self.frame_card_mp4.setObjectName("frame_card_mp4")
         self.frame_card_arriba_mp4 = QtWidgets.QFrame(self.frame_card_mp4)
         self.frame_card_arriba_mp4.setGeometry(QtCore.QRect(0, 0, 181, 211))
+        self.frame_card_arriba_mp4.setCursor(QtCore.Qt.PointingHandCursor)
         self.frame_card_arriba_mp4.setStyleSheet("#frame_card_arriba_mp4 {\n"
 "border: 1px solid #777;\n"
 "border-radius: 15px;\n"
@@ -157,6 +159,7 @@ class Ui_Formato(object):
         self.frame_card_mp4a.setObjectName("frame_card_mp4a")
         self.frame_card_arriba_mp4a = QtWidgets.QFrame(self.frame_card_mp4a)
         self.frame_card_arriba_mp4a.setGeometry(QtCore.QRect(0, 0, 181, 211))
+        self.frame_card_arriba_mp4a.setCursor(QtCore.Qt.PointingHandCursor)
         self.frame_card_arriba_mp4a.setStyleSheet("#frame_card_arriba_mp4a {\n"
 "border: 1px solid #777;\n"
 "border-radius: 15px;\n"

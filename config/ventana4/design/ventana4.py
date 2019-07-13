@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'Ui_Ventana4.ui',
 # licensing of 'Ui_Ventana4.ui' applies.
 #
-# Created: Thu Jul 11 17:27:38 2019
+# Created: Fri Jul 12 22:00:08 2019
 #      by: pyside2-uic  running on PySide2 5.12.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -49,10 +49,10 @@ class Ui_Descarga(object):
 "    border-radius:3px;\n"
 "    background-color: rgb(29, 202, 197)\n"
 "}")
-        self.proceso.setMaximum(0)
-        self.proceso.setProperty("value", -1)
+        self.proceso.setMaximum(100)
+        self.proceso.setProperty("value", 0)
         self.proceso.setAlignment(QtCore.Qt.AlignCenter)
-        self.proceso.setTextVisible(False)
+        self.proceso.setTextVisible(True)
         self.proceso.setObjectName("proceso")
         self.verticalLayout.addWidget(self.proceso)
         spacerItem1 = QtWidgets.QSpacerItem(20, 101, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)

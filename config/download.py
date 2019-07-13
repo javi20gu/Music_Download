@@ -1,5 +1,5 @@
 from os import name
-from os.path import abspath, dirname, join
+from os.path import abspath, dirname, join, split
 from pathlib import Path
 from zipfile import ZipFile
 
@@ -8,9 +8,21 @@ from PySide2.QtCore import QThread, Signal
 from youtube_dl.YoutubeDL import YoutubeDL
 
 
+class Log:
+    def debug(self, msg):
+        pass
+
+    def warning(self, msg):
+        pass
+
+    def error(self, msg):
+        pass
+
+
 class Download(QThread):
-    
+  
     is_error = Signal(bool, str, int)
+    status = Signal(str)
     DIRECTORIO_PRINCIPAL = abspath(dirname(__file__))
 
     def __init__(self, padre, state):
@@ -19,6 +31,10 @@ class Download(QThread):
         from .state import State
         self.padre: FrameDescarga = padre
         self.state: State = state
+
+    def proceso(self, data: dict):
+        if data['status'] == 'downloading':
+            self.status.emit(data['_percent_str'])
 
     def run(self):
         estado: dict = self.state.get_state()
@@ -38,6 +54,8 @@ class Download(QThread):
                                 myzip.extractall(path=self.DIRECTORIO_PRINCIPAL)
                         opciones = {
                             'format': 'bestaudio/best',
+                            'progress_hooks': [self.proceso],
+                            'logger': Log(),
                             'outtmpl': join(localizacion, "%(title)s-%(id)s.%(ext)s"),
                             'ffmpeg_location': abspath(join(self.DIRECTORIO_PRINCIPAL,
                                                             "ffmpeg-4.0.2-win64-static", "bin", "ffmpeg.exe")),
@@ -49,6 +67,8 @@ class Download(QThread):
                         opciones = {
                             'format': 'bestaudio/best',
                             'outtmpl': join(localizacion, "%(title)s-%(id)s.%(ext)s"),
+                            'progress_hooks': [self.proceso],
+                            'logger': Log(),
                             'postprocessors': [{
                                 'key': 'FFmpegExtractAudio',
                                 'preferredcodec': 'mp3',
@@ -58,10 +78,15 @@ class Download(QThread):
                     opciones = {
                         'outtmpl': join(localizacion, "%(title)s-%(id)s.%(ext)s"),
                         'format': 'm4a',
+                        'logger': Log(),
+                        'progress_hooks': [self.proceso],
                     }
                 elif formato == 'mp4':
-                    opciones = {'outtmpl': join(
-                        localizacion, "%(title)s-%(id)s.%(ext)s")}
+                    opciones = {
+                        'outtmpl': join(localizacion, "%(title)s-%(id)s.%(ext)s"),
+                        'logger': Log(),
+                        'progress_hooks': [self.proceso],
+                    }
 
                 with YoutubeDL(opciones) as ydl:
                     ydl.download([cancion])

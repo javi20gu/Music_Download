@@ -35,6 +35,10 @@ class Frame_Formatos(Ui_Formato, QFrame):
         self.label_titulo.setFont(QFont(fonts[0][0], 27))
         self.label_subtitulo.setFont(QFont(fonts[3][0], 10))
 
+        self.frame_card_arriba_mp3.mousePressEvent = lambda event: self.convertirMp3()
+        self.frame_card_arriba_mp4.mousePressEvent = lambda event: self.convertirMp4()
+        self.frame_card_arriba_mp4a.mousePressEvent = lambda event: self.convertirMp4a()
+
         self.icono_mp3.setPixmap(QPixmap(f'{self.ruta_mp3}'))
         self.icono_mp4.setPixmap(QPixmap(f'{self.ruta_mp4}'))
         self.icono_mp4a.setPixmap(QPixmap(f'{self.ruta_mp4a}'))
